@@ -12,6 +12,7 @@ const closeModal = () => {
 };
 let lastThirdOfTheNightTimeStart = document.getElementById("third");
 let midnightStart = document.getElementById("midnight");
+let firstThirdOfTheNightTimeStart = document.getElementById("first_third");
 let difference = 0;
 let thirdOfTheDifference = 0;
 let halfOfTheDifference = 0;
@@ -31,8 +32,13 @@ let calculateTimes = () => {
     difference = fajr.diff(maghrib);
     thirdOfTheDifference = difference / 3;
     halfOfTheDifference = difference / 2;
+    firstThirdOfTheNight = maghrib.add(thirdOfTheDifference, "milliseconds").format("HH:mm");
     lastThirdOfTheNight = fajr.subtract(thirdOfTheDifference, "milliseconds").format("HH:mm");
     midnight = fajr.subtract(halfOfTheDifference, "milliseconds").format("HH:mm");
+
+    firstThirdOfTheNightTimeStart.innerHTML = firstThirdOfTheNight;
+    firstThirdOfTheNightTimeStart.style.visibility = "visible";
+
     lastThirdOfTheNightTimeStart.innerHTML = lastThirdOfTheNight;
     lastThirdOfTheNightTimeStart.style.visibility = "visible";
     midnightStart.innerHTML = midnight;

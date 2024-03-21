@@ -23,7 +23,8 @@ body {
   filter: blur();
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
   border-radius: 0.5em;
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow: scroll;
   display: flex;
   flex-flow: column;
   flex: 50%;
@@ -32,6 +33,7 @@ body {
   align-items: center;
   margin: 0.5em;
 }
+
 
 .maghribtext,
 .fajrtext {
@@ -76,6 +78,7 @@ body {
   visibility: hidden;
 }
 
+.first_third_text,
 .thirdtext,
 .midnighttext {
   position: relative;
@@ -88,6 +91,7 @@ body {
   margin-bottom: 0.5em;
 }
 
+.first_third,
 .third,
 .midnight {
   position: relative;
